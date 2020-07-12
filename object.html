@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+var obj1={name:"zahngsan"};
+var obj2={age:18};
+var obj3={say:function(){
+       console.log("说话");
+}}
+console.log(Object.assign(obj1,obj2,obj3));
+console.log(obj1,obj2);
+
+var obj={name:'zhangsan',age:20};
+var newobj=Object.assign({},obj);
+console.log(newobj);
+
+console.log(Object.is(+0,-0))
+console.log(Object.is(NaN,NaN))
+
+function a(){
+
+}
+function c(){
+
+}
+var b=new a();
+console.log(a.prototype.isPrototypeOf(b));
+console.log(a.prototype.isPrototypeOf(c));
+
+
+var obj = new Object();
+Object.defineProperty(obj, 'name', {
+    configurable: false,         //可配置
+    writable: true,               //可写
+    enumerable: true,           //该属性是否可枚举
+    value: '张三'
+})
+console.log(obj.name)  //张三
+
+
+
+var obj =new Object();
+Object.defineProperties(obj,{
+   name:{
+          value:"zhangsan",
+          configurable:false,
+          writable:true,
+          enumerable:true
+   },
+   age:{
+    value:18,
+          configurable:false,
+          
+   }
+
+})
+console.log(obj.name,obj.age);
+
+
+
+
+var obj={name:"zhangsan",age:18};
+Object.freeze(obj);
+obj.name="lisi";
+obj.sex="男";
+console.log(obj);
+
+
+const obj={
+    name:"zhngsan",
+    age:20
+}
+Object.freeze(obj);
+obj.name="lisi"
+console.log(obj.name)
+
+
+
+var obj={
+    name:"小米",
+    age:18,
+    say:function(){
+        console.log("你好");
+    }
+}
+for(var i in obj){
+    console.log(obj[i])
+}
+var obj={'a':'123','b':'345'}
+console.log(Object.keys(obj));
+var obj1={100:'a',2:'b',7:'c'}
+console.log(Object.keys(obj1));
+
+var obj2=Object.create({},{
+    value:function(){
+        return this.foo
+    }
+})
+obj2.foo=1;
+console.log(Object.keys(obj2));
+
+
+var obj=Object.create({},{
+
+     getfoo:{
+    value:function(){
+        return this.foo;
+       
+    },
+    enumerable:false
+}
+})
+obj.foo=1;
+console.log(Object.getOwnPropertyNames(obj));
+console.log(Object.getOwnPropertyNames(obj));
+
+
+
+
+var obj={};
+var a=Symbol("a");
+var b=Symbol("b");
+var c=12;
+var d="aaaa"
+obj[a]="symbol1"
+obj[b]="symbol2"
+console.log(Object.getOwnPropertySymbols(obj));
+
+
+
+var obj={z:3,y:2,x:1}
+console.log(Reflect.ownKeys(obj));
+console.log(Reflect.ownKeys([]));
+var obj1={}
+var a=Symbol("a");
+var b=Symbol("b");
+obj1[a]="symbol1"
+obj1[b]="symbol2"
+console.log(Reflect.ownKeys(obj1))
+
+
+var obj ={name:"zhngsan",age:20}
+console.log(Object.values(obj));
+
+
+
+
+    </script>
+</body>
+</html>

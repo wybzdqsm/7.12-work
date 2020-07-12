@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var obj= {
+    "name": "张三",
+    "age": 20
+}
+console.log(obj)
+
+var str='hello world';
+console.log(str.length)
+console.log(str.charAt(0));
+console.log(str.charAt(8));
+console.log(str.charCodeAt(0))
+console.log(str.charCodeAt(8))
+console.log(String.fromCharCode(64))
+console.log(String.fromCharCode(65))
+console.log(str.indexOf('a'))
+console.log(str.indexOf('h'))
+console.log(str.lastIndexOf('d'))
+console.log(str.lastIndexOf('h'))
+console.log(str.replace('o','a'))
+console.log(str.slice(0,5))
+console.log(str.slice(5))
+console.log(str.slice(5,-1))
+console.log(str.substring(0,5))
+console.log(str.substr(0,10))
+console.log(str.split("l"))
+console.log(str.split(""))
+var str2="HELLO WORLD"
+console.log(str2.toLowerCase())
+console.log(str.toUpperCase())
+
+var str3="  aa  bb   ";
+console.log(str3.trim())
+console.log(str.match('l'))
+console.log(str.match(/l/g))
+console.log(str.concat('aaaa'))
+var str4="abc"
+console.log(str4.padStart(10))
+console.log(str4.padStart(10,"123"))
+console.log(str4.padStart(11,"d"))
+console.log(str4.padStart(2))
+console.log(str4.padEnd(10))
+console.log(str4.padEnd(10,"123"))
+console.log(str4.padEnd(11,"d"))
+console.log(str4.padEnd(2))
+
+
+var time=new Date();
+var h=String(time.getHours()).padStart(2,'0')
+var m=String(time.getMinutes()).padStart(2,'0')
+var s=String(time.getSeconds()).padStart(2,'0')
+console.log(`${h}:${m}:${s}`)
+
+
+
+var str = {"name":"zhangsan", "age":18}
+str_pretty = JSON.stringify(str)
+console.log(typeof(str_pretty))
+
+console.log(typeof(JSON.parse('{}')));             
+
+
+
+
+    </script>
+</body>
+</html>
